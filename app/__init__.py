@@ -24,8 +24,8 @@ def verify():
 def webhook():
 	response = request.get_json()
 	print(response)
-	if not response['entry'][0]['messaging'][0]['is_echo']:
-		json_response = bot.send_message(response['entry'][0]['messaging'][0]['sender']['id'], 'This is a robot')
-		print('RESPONDIDO {0}'.format(json_response))
+	
+	json_response = bot.send_message(response['entry'][0]['messaging'][0]['sender']['id'], 'This is a robot')
+	print('RESPONDIDO {0}'.format(json_response))
 	return '200'
 
