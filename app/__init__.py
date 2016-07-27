@@ -35,7 +35,7 @@ def hook():
 	if request.method == 'POST':
 		response = request.get_json()
 		print(response)
-		json_response = send_message(response['entry'][0]['messaging'][0]['recipient']['id'], 'This is a robot')
+		json_response = send_message(response['entry'][0]['messaging'][0]['sender']['id'], 'This is a robot')
 		print(json_response.content)
 		return '200'
 	else:
