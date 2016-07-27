@@ -6,6 +6,11 @@ app.debug = True
 
 VERIFY_TOKEN = os.environ['verify_token']
 
+@app.route("/")
+def index():
+	print("LLEGA")
+	return 'OK'
+
 @app.route("/webhook")
 def hook():
 	print('PETICION REALIZADA')
