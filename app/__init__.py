@@ -11,12 +11,10 @@ PAGE_ACCESS_TOKEN = os.environ['page_access_token']
 url = "https://graph.facebook.com/v2.6/me/thread_settings?access_token={0}".format(PAGE_ACCESS_TOKEN)
 payload = {
 	'setting_type': 'greeting',
-	'greeting': {
-		'text': "Welcome to the new testing bot!"
-	}
+	'greeting.text': 'Welcome to the new testing bot!'
 }
 
-response = requests.post(url, data=payload)
+response = requests.post(url, json=payload)
 print(response.content)
 
 @app.route("/webhook", methods=['GET','POST'])
