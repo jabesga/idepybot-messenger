@@ -26,7 +26,7 @@ def send_message(user_id, message):
 		'message': message
 	}
 
-	json_response = requests.post(url, data=payload)
+	json_response = requests.post(url, json=payload)
 	return json_response
 
 @app.route("/webhook", methods=['GET','POST'])
@@ -35,7 +35,7 @@ def hook():
 		response = request.get_json()
 		print(response)
 		json_response = send_message(response['entry'][0]['messaging'][0]['recipient']['id'], 'This is a robot')
-		print(json_response)
+		print(json_response.content)
 		return '200'
 	else:
 		if request.args.get('hub.verify_token') == VERIFY_TOKEN:
