@@ -6,19 +6,15 @@ app.debug = True
 
 VERIFY_TOKEN = os.environ['verify_token']
 
-@app.route("/")
-def index():
-	print("LLEGA")
-	return 'OK'
-
 @app.route("/webhook")
 def hook():
-	print('PETICION REALIZADA')
-	print(request)
 	if request.method == 'POST':
+		return '200'
 		print(request.get_json())
 	else:
 		if request.args.get('hub.verify_token') == VERIFY_TOKEN:
 			return request.args.get('hub.challenge')
 		else:
 			return 'Error, wrong validation token'
+
+	
