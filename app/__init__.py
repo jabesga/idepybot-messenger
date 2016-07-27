@@ -8,6 +8,8 @@ VERIFY_TOKEN = os.environ['verify_token']
 
 @app.route("/webhook")
 def hook():
+	print('PETICION REALIZADA')
+	print(request)
 	if request.method == 'POST':
 		print(request.get_json())
 	else:
