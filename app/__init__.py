@@ -1,5 +1,5 @@
 from flask import Flask, request
-from bot import Bot
+from .bot import Bot
 import requests
 import os
 
