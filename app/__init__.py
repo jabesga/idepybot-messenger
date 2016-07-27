@@ -22,7 +22,7 @@ print(response.content)
 def send_message(user_id, message):
 	url = "https://graph.facebook.com/v2.6/me/thread_settings?access_token={0}".format(PAGE_ACCESS_TOKEN)
 	payload = {
-		'recipient': user_id
+		'recipient': user_id,
 		'message': message
 	}
 
