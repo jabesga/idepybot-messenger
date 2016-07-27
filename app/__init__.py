@@ -21,6 +21,7 @@ print(response.content)
 
 def send_message(user_id, message):
 	url = "https://graph.facebook.com/v2.6/me/messages?access_token={0}".format(PAGE_ACCESS_TOKEN)
+	print(user_id)
 	payload = {
 		'recipient': {'id': user_id},
 		'message': {'text':message}
