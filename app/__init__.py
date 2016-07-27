@@ -26,7 +26,7 @@ def send_message(user_id, message):
 		'message': message
 	}
 
-	json_response = request.post(url, data=payload)
+	json_response = requests.post(url, data=payload)
 	return json_response
 
 @app.route("/webhook", methods=['GET','POST'])
