@@ -17,7 +17,7 @@ payload = {
 }
 
 response = requests.post(url, data=payload)
-print(response)
+print(response.content)
 
 @app.route("/webhook", methods=['GET','POST'])
 def hook():
