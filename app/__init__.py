@@ -23,6 +23,8 @@ def verify():
 @app.route("/webhook", methods=['POST'])
 def webhook():
 	response = request.get_json()
+	print(response.content)
 	json_response = bot.send_message(response['entry'][0]['messaging'][0]['sender']['id'], 'This is a robot')
+	print('RESPONDIDO {0}'.format(json_response))
 	return '200'
 
