@@ -9,8 +9,8 @@ VERIFY_TOKEN = os.environ['verify_token']
 @app.route("/webhook", methods=['GET','POST'])
 def hook():
 	if request.method == 'POST':
-		return '200'
 		print(request.get_json())
+		return '200'
 	else:
 		if request.args.get('hub.verify_token') == VERIFY_TOKEN:
 			return request.args.get('hub.challenge')
