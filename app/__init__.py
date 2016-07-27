@@ -6,7 +6,7 @@ app.debug = True
 
 VERIFY_TOKEN = os.environ['verify_token']
 
-@app.route("/webhook")
+@app.route("/webhook", methods=['GET','POST'])
 def hook():
 	if request.method == 'POST':
 		return '200'
